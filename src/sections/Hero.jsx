@@ -21,12 +21,12 @@ export default function Hero() {
       </div>
 
       <div className="container hero-inner">
-        {/* ── Left ── */}
+        {/* ── Left Top ── */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
-          className="hero-left"
+          className="hero-left-top"
         >
           <div className="hero-badge">
             <Zap size={13} /> AI Automation Agency · Built for B2B
@@ -51,7 +51,15 @@ export default function Hero() {
               Meet the Agents
             </a>
           </div>
+        </motion.div>
 
+        {/* ── Left Bottom ── */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="hero-left-bottom"
+        >
           <div className="hero-social-proof">
             <div className="hero-avatars">
               {faces.map((src, i) => (

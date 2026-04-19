@@ -31,18 +31,17 @@
   align-items: center;
 }
 
-.trustbar-item {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--navy);
-  opacity: 0.28;
-  letter-spacing: -0.01em;
+.trustbar-logo {
+  height: 64px;
+  width: auto;
+  opacity: 0.85;
   transition: opacity 0.3s;
-  text-transform: uppercase;
+  flex-shrink: 0;
 }
 
-.trustbar-item:hover { opacity: 0.7; }
+.trustbar-logo:hover {
+  opacity: 1;
+}
 
 @keyframes slide {
   from { transform: translateX(0); }
