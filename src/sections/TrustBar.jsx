@@ -1,4 +1,6 @@
 import './TrustBar.css';
+import logo1 from '../assets/Logos/1.svg';
+import logo2 from '../assets/Logos/2.svg';
 import logo3 from '../assets/Logos/3.svg';
 import logo4 from '../assets/Logos/4.svg';
 import logo5 from '../assets/Logos/5.svg';
@@ -7,10 +9,8 @@ import logo7 from '../assets/Logos/7.svg';
 import logo8 from '../assets/Logos/8.svg';
 import logo9 from '../assets/Logos/9.svg';
 import logo10 from '../assets/Logos/10.svg';
-import logo11 from '../assets/Logos/11.svg';
-import logo12 from '../assets/Logos/12.svg';
 
-const logos = [logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo11, logo12];
+const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10];
 
 export default function TrustBar() {
   const doubled = [...logos, ...logos];
