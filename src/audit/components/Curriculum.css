@@ -1,0 +1,58 @@
+.audit-scope .curriculum-section {
+  padding: 72px 0;
+  background: #fff;
+}
+
+
+.audit-scope .modules-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+
+@media (max-width: 600px) {
+  .audit-scope .modules-grid { grid-template-columns: 1fr; }
+}
+
+.audit-scope .module-card {
+  background: var(--cream);
+  border: 1px solid rgba(0,31,63,0.07);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  transition: box-shadow 0.2s;
+}
+
+
+.audit-scope .module-card:hover {
+  box-shadow: 0 4px 20px rgba(0,31,63,0.08);
+}
+
+
+.audit-scope .module-num {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--red);
+  flex-shrink: 0;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  padding-top: 2px;
+}
+
+
+.audit-scope .module-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--navy);
+}
+
+
+.audit-scope .module-desc {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.5;
+}

@@ -1,0 +1,140 @@
+.audit-scope .workshop-section {
+  padding: 72px 0;
+  background: var(--cream);
+}
+
+
+.audit-scope .workshop-card {
+  background: #fff;
+  border: 1px solid rgba(0,31,63,0.08);
+  border-radius: 16px;
+  padding: 48px 40px;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+  box-shadow: 0 8px 40px rgba(0,31,63,0.08);
+}
+
+
+.audit-scope .workshop-tag {
+  background: var(--cream);
+  color: var(--red);
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 3px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+
+.audit-scope .workshop-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--navy);
+  line-height: 1.5;
+}
+
+
+.audit-scope .workshop-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+
+.audit-scope .w-original {
+  font-size: 1rem;
+  color: #aaa;
+  text-decoration: line-through;
+  font-weight: 600;
+}
+
+
+.audit-scope .w-current {
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: var(--navy);
+  letter-spacing: -0.03em;
+}
+
+
+.audit-scope .w-badge {
+  background: var(--red);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+
+
+.audit-scope .workshop-deadline {
+  font-size: 0.82rem;
+  color: var(--red);
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+
+
+.audit-scope .workshop-perks-title {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 12px;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+
+.audit-scope .workshop-perks {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.audit-scope .workshop-perks li {
+  font-size: 0.88rem;
+  color: #444;
+  line-height: 1.5;
+  font-weight: 500;
+  padding-left: 14px;
+  position: relative;
+}
+
+
+.audit-scope .workshop-perks li::before {
+  content: '—';
+  color: var(--red);
+  font-weight: 700;
+  position: absolute;
+  left: 0;
+}
+
+
+.audit-scope .workshop-btn {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 16px 44px;
+  border-radius: 6px;
+  margin-bottom: 14px;
+}
+
+
+.audit-scope .workshop-note {
+  font-size: 0.75rem;
+  color: #999;
+  font-weight: 500;
+}

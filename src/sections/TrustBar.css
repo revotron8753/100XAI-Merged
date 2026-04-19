@@ -1,0 +1,50 @@
+.trustbar {
+  padding: 52px 0;
+  background: var(--cream);
+  border-top: 1px solid var(--cream-dark);
+  border-bottom: 1px solid var(--cream-dark);
+  overflow: hidden;
+}
+
+.trustbar-label {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 28px;
+}
+
+.trustbar-track {
+  display: flex;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+.trustbar-row {
+  display: flex;
+  gap: 56px;
+  animation: slide 28s linear infinite;
+  white-space: nowrap;
+  align-items: center;
+}
+
+.trustbar-item {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--navy);
+  opacity: 0.28;
+  letter-spacing: -0.01em;
+  transition: opacity 0.3s;
+  text-transform: uppercase;
+}
+
+.trustbar-item:hover { opacity: 0.7; }
+
+@keyframes slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}

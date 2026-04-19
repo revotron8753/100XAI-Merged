@@ -1,0 +1,80 @@
+.audit-scope .bonuses-section {
+  padding: 72px 0;
+  background: var(--navy);
+}
+
+
+.audit-scope .bonuses-section .section-title {
+  color: #fff;
+}
+
+
+.audit-scope .bonuses-section .section-sub {
+  color: #a8bbd0;
+}
+
+
+.audit-scope .highlight-green {
+  color: var(--red);
+  font-style: italic;
+}
+
+
+.audit-scope .bonuses-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+
+@media (max-width: 600px) {
+  .audit-scope .bonuses-grid { grid-template-columns: 1fr; }
+}
+
+.audit-scope .bonus-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 22px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: border-color 0.2s;
+}
+
+
+.audit-scope .bonus-card:hover {
+  border-color: rgba(255,65,54,0.4);
+}
+
+
+.audit-scope .bonus-num {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--red);
+  flex-shrink: 0;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  padding-top: 2px;
+}
+
+
+.audit-scope .bonus-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+
+.audit-scope .bonus-desc {
+  font-size: 0.8rem;
+  color: #a8bbd0;
+  line-height: 1.5;
+}
+
+
+.audit-scope .bonuses-cta {
+  text-align: center;
+}

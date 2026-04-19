@@ -1,0 +1,187 @@
+/* ── DEFAULT — full-width bar at top ── */
+.navbar {
+  background: var(--navy);
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.navbar-links a {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navbar-links a:hover { color: var(--white); }
+
+/* ── GLASS PILL — floats to bottom-right ── */
+.navbar--glass {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  top: auto;
+  left: auto;
+  width: fit-content;
+  background: rgba(0, 20, 40, 0.65);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  border-radius: 14px;
+  padding: 10px 20px;
+  animation: runToCorner 0.65s cubic-bezier(0.34, 1.15, 0.64, 1) forwards;
+}
+
+/* ── EXIT — animates back to top ── */
+.navbar--leaving {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  top: auto;
+  left: auto;
+  width: fit-content;
+  background: rgba(0, 20, 40, 0.65);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 10px 20px;
+  animation: leaveCorner 0.35s ease-in forwards;
+  pointer-events: none;
+}
+
+/* ── PILL INNER layout ── */
+.pill-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.logo-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.nav-logo {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+.nav-logo--small {
+  height: 36px;
+}
+
+.navbar-cta {
+  font-size: 0.82rem !important;
+  padding: 10px 22px !important;
+  white-space: nowrap;
+  text-decoration: none;
+  transition:
+    max-width 0.4s cubic-bezier(0.34, 1.15, 0.64, 1),
+    opacity 0.3s ease,
+    padding 0.35s ease,
+    margin 0.35s ease;
+}
+
+/* ── MOBILE: button hidden until expanded ── */
+.navbar--mobile .navbar-cta--hidden {
+  max-width: 0;
+  opacity: 0;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.navbar--mobile .pill-inner {
+  gap: 0;
+}
+
+/* ── MOBILE: expanded ── */
+.navbar--expanded .navbar-cta--hidden,
+.navbar--expanded .navbar-cta {
+  max-width: 220px;
+  opacity: 1;
+  padding: 10px 18px !important;
+  margin-left: 16px;
+  pointer-events: auto;
+  overflow: visible;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .nav-logo { height: 36px; }
+
+  /* Hide links and CTA in top bar on mobile */
+  .navbar-links,
+  .navbar-inner .navbar-cta { display: none; }
+
+  /* Nudge pill inward */
+  .navbar--glass,
+  .navbar--leaving {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  /* Prevent CTA flash during leave */
+  .navbar--leaving .navbar-cta { display: none; }
+
+  /* Expanded pill: stretch full width */
+  .navbar--expanded {
+    right: 12px;
+    left: 12px;
+    width: auto;
+    padding: 10px 16px;
+  }
+
+  .navbar--expanded .pill-inner {
+    justify-content: space-between;
+  }
+
+  .navbar--expanded .navbar-cta {
+    margin-left: 12px;
+    margin-right: 2px;
+    font-size: 0.75rem !important;
+    padding: 8px 12px !important;
+  }
+}
+
+/* ── KEYFRAMES ── */
+@keyframes runToCorner {
+  from {
+    transform: translate(calc(-50vw + 50% + 28px), calc(-100vh + 100% + 28px));
+    opacity: 0.2;
+    border-radius: 4px;
+  }
+  60% { opacity: 1; }
+  to  { transform: translate(0, 0); opacity: 1; border-radius: 14px; }
+}
+
+@keyframes leaveCorner {
+  0%   { transform: translate(0, 0); opacity: 1; }
+  40%  { opacity: 0.6; }
+  100% { transform: translate(calc(-50vw + 50% + 28px), calc(-100vh + 100% + 28px)); opacity: 0; }
+}

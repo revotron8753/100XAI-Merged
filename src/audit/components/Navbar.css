@@ -1,0 +1,208 @@
+/* ── DEFAULT — full-width sticky bar ── */
+.audit-scope .navbar {
+  background: var(--navy);
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+
+.audit-scope .nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* ── GLASS PILL — floated to bottom-right ── */
+.audit-scope .navbar--glass {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  top: auto;
+  left: auto;
+  width: fit-content;
+  background: rgba(0, 20, 40, 0.65);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  border-radius: 14px;
+  padding: 10px 20px;
+  animation: runToCorner 0.65s cubic-bezier(0.34, 1.15, 0.64, 1) forwards;
+}
+
+
+/* ── EXIT — shrinks and fades in place ── */
+.audit-scope .navbar--leaving {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  top: auto;
+  left: auto;
+  width: fit-content;
+  background: rgba(0, 20, 40, 0.65);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 10px 20px;
+  animation: leaveCorner 0.35s ease-in forwards;
+  pointer-events: none;
+}
+
+
+/* ── PILL INNER layout ── */
+.audit-scope .pill-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+
+.audit-scope .logo-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.audit-scope .nav-logo {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+
+.audit-scope .nav-logo--small {
+  height: 36px;
+}
+
+
+
+.audit-scope .expand-arrow {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 1.1rem;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.2s ease;
+  line-height: 1;
+}
+
+
+.audit-scope .expand-arrow.flipped {
+  transform: rotate(90deg);
+  color: var(--red);
+}
+
+
+.audit-scope .nav-btn {
+  font-size: 0.82rem;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 10px 22px;
+  transition: max-width 0.4s cubic-bezier(0.34, 1.15, 0.64, 1),
+              opacity 0.3s ease,
+              padding 0.35s ease,
+              margin 0.35s ease;
+}
+
+
+/* ── MOBILE: button hidden until expanded ── */
+.audit-scope .navbar--mobile .nav-btn--hidden {
+  max-width: 0;
+  opacity: 0;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+
+.audit-scope .navbar--mobile .pill-inner {
+  gap: 0;
+}
+
+
+/* ── MOBILE: expanded ── */
+.audit-scope .navbar--expanded .nav-btn--hidden, .audit-scope .navbar--expanded .nav-btn {
+  max-width: 220px;
+  opacity: 1;
+  padding: 10px 18px;
+  margin-left: 16px;
+  pointer-events: auto;
+  overflow: visible;
+}
+
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .audit-scope .nav-logo {
+    height: 36px;
+  }
+
+
+  /* Hide CTA in top bar on mobile */
+  .audit-scope .nav-inner .nav-btn {
+    display: none;
+  }
+
+
+  /* Keep corner pill, just nudge inward */
+  .audit-scope .navbar--glass, .audit-scope .navbar--leaving {
+    bottom: 16px;
+    right: 16px;
+  }
+
+
+  /* Prevent CTA flash during leave animation */
+  .audit-scope .navbar--leaving .nav-btn {
+    display: none;
+  }
+
+
+  /* When expanded, constrain width so it doesn't overflow */
+  .audit-scope .navbar--expanded {
+    right: 12px;
+    left: 12px;
+    width: auto;
+    padding: 10px 16px;
+  }
+
+
+  .audit-scope .navbar--expanded .pill-inner {
+    justify-content: space-between;
+  }
+
+
+  .audit-scope .navbar--expanded .nav-btn {
+    margin-left: 12px;
+    margin-right: 2px;
+    font-size: 0.75rem;
+    padding: 8px 12px;
+  }
+
+}
+
+/* ── KEYFRAMES ── */
+@keyframes runToCorner {
+  from {
+    transform: translate(calc(-50vw + 50% + 28px), calc(-100vh + 100% + 28px));
+    opacity: 0.2;
+    border-radius: 4px;
+  }
+  60% { opacity: 1; }
+  to  { transform: translate(0, 0); opacity: 1; border-radius: 14px; }
+}
+
+@keyframes leaveCorner {
+  0%   { transform: translate(0, 0); opacity: 1; }
+  40%  { opacity: 0.6; }
+  100% { transform: translate(calc(-50vw + 50% + 28px), calc(-100vh + 100% + 28px)); opacity: 0; }
+}

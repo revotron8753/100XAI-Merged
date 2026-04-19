@@ -1,0 +1,15 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.logo-img {
+  display: block;
+  object-fit: contain;
+}
+
+.logo-sm .logo-img { height: 32px; width: auto; }
+.logo-md .logo-img { height: 40px; width: auto; }
+.logo-lg .logo-img { height: 50px; width: auto; }

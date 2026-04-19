@@ -1,0 +1,108 @@
+.audit-scope .hero-section {
+  background: var(--navy);
+  padding: 72px 0 64px;
+  text-align: center;
+}
+
+
+.audit-scope .hero-inner {
+  display: block;
+  text-align: center;
+}
+
+
+.audit-scope .hero-title {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+
+.audit-scope .highlight {
+  color: var(--red);
+  font-style: italic;
+}
+
+
+.audit-scope .hero-sub {
+  font-size: 1rem;
+  color: #a8bbd0;
+  max-width: 580px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+
+.audit-scope .hero-price-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+
+.audit-scope .price-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+.audit-scope .original-price {
+  font-size: 1rem;
+  color: #5a7a99;
+  text-decoration: line-through;
+  font-weight: 600;
+}
+
+
+.audit-scope .current-price {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+
+.audit-scope .price-badge {
+  background: var(--red);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+
+
+.audit-scope .deadline {
+  font-size: 0.85rem;
+  color: #a8bbd0;
+  font-weight: 600;
+}
+
+
+.audit-scope .hero-btn {
+  font-size: 1rem;
+  padding: 16px 40px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+}
+
+
+.audit-scope .hero-note {
+  font-size: 0.75rem;
+  color: #5a7a99;
+  font-weight: 500;
+}
+
+
+@media (max-width: 768px) {
+  .audit-scope .hero-section { padding: 36px 0 48px; }
+
+  .audit-scope .hero-title { font-size: 2rem; }
+}

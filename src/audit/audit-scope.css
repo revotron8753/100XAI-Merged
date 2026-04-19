@@ -1,0 +1,106 @@
+/* ═══════════════════════════════════════════════════
+   Audit page scope — styles quarantined to /audit route.
+   Converted from landing's index.css + App.css with every
+   selector prefixed by `.audit-scope` so they don't bleed
+   into the homepage.
+   ═══════════════════════════════════════════════════ */
+
+/* Body-level styles apply only while the audit page is mounted
+   (AuditPage.jsx adds `audit-body` to <body>). */
+body.audit-body {
+  font-family: 'Montserrat', sans-serif;
+  color: #001F3F;
+  background: #ffffff;
+  /* Override homepage's overflow-x: hidden if different; keep hidden */
+  overflow-x: hidden;
+}
+
+/* Scope container reset — matches landing's `* { box-sizing; margin:0; padding:0 }` */
+.audit-scope,
+.audit-scope *,
+.audit-scope *::before,
+.audit-scope *::after {
+  box-sizing: border-box;
+}
+
+.audit-scope {
+  font-family: 'Montserrat', sans-serif;
+  color: #001F3F;
+  width: 100%;
+  /* CSS variables from landing's :root — kept locally scoped */
+  --navy: #001F3F;
+  --cream: #F0EEE9;
+  --red: #FF4136;
+  --white: #ffffff;
+  --text: #001F3F;
+  --muted: #5a6a7a;
+}
+
+/* Landing's App.css shared utilities — all scoped */
+.audit-scope .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.audit-scope .btn-primary {
+  background: var(--red);
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: inline-block;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.audit-scope .btn-primary:hover {
+  background: #e0362c;
+}
+
+.audit-scope .section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 12px;
+  color: var(--navy);
+  line-height: 1.2;
+}
+
+.audit-scope .section-sub {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 40px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Reset any inherited homepage heading styles inside the scope so landing
+   renders exactly as it did standalone. */
+.audit-scope h1,
+.audit-scope h2,
+.audit-scope h3,
+.audit-scope h4,
+.audit-scope h5,
+.audit-scope h6 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--navy);
+  letter-spacing: normal;
+  line-height: 1.2;
+}
+
+.audit-scope a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.audit-scope img {
+  max-width: 100%;
+  display: block;
+}
