@@ -5,7 +5,6 @@ import Hero from './components/Hero'
 import Graduates from './components/Graduates'
 import FeaturedIn from './components/FeaturedIn'
 import ToolsGrid from './components/ToolsGrid'
-import Curriculum from './components/Curriculum'
 import Bonuses from './components/Bonuses'
 import Instructors from './components/Instructors'
 import Previews from './components/Previews'
@@ -35,7 +34,6 @@ export default function AuditPage() {
       <Graduates />
       <FeaturedIn />
       <ToolsGrid />
-      <Curriculum />
       <Bonuses />
       <Instructors />
       <Previews />
