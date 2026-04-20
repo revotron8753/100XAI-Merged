@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Check, ArrowUpRight } from 'lucide-react';
 import { agents } from '../data/agents';
-import './Services.css';
+import { scrollTo } from '../utils/scroll';
 
 export default function Services() {
   return (
@@ -71,10 +71,7 @@ export default function Services() {
                 <a
                   href="#contact"
                   className="agent-cta"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
+                  onClick={(e) => { e.preventDefault(); scrollTo('contact'); }}
                 >
                   Deploy <ArrowUpRight size={14} />
                 </a>

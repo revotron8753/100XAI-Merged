@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './FAQ.css'
 
 const faqs = [
   { q: 'What happens in the Automation Audit call?', a: 'We analyze your current operations and identify where AI can save time, reduce costs, and increase output.' },

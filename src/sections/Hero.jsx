@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Star, Zap, TrendingUp, Mail, Linkedin, FileText } from 'lucide-react';
-import face1 from '../assets/Faces/Aayushmaan.jpeg';
-import face2 from '../assets/Faces/Abhinav.jpeg';
-import face3 from '../assets/Faces/Abhishek.jpg';
-import face4 from '../assets/Faces/Arun.jpeg';
-import face5 from '../assets/Faces/Kanchan.jpeg';
-import './Hero.css';
+import Image from 'next/image';
+const face1 = '/assets/Faces/Aayushmaan.jpeg';
+const face2 = '/assets/Faces/Abhinav.jpeg';
+const face3 = '/assets/Faces/Abhishek.jpg';
+const face4 = '/assets/Faces/Arun.jpeg';
+const face5 = '/assets/Faces/Kanchan.jpeg';
 
 const faces = [face1, face2, face3, face4, face5];
 
@@ -63,7 +63,7 @@ export default function Hero() {
           <div className="hero-social-proof">
             <div className="hero-avatars">
               {faces.map((src, i) => (
-                <img key={i} src={src} alt="client" className="hero-avatar" style={{ zIndex: faces.length - i }} />
+                <Image key={i} src={src} alt="client" width={38} height={38} className="hero-avatar" style={{ zIndex: faces.length - i }} />
               ))}
             </div>
             <div className="hero-rating-text">

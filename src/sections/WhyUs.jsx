@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import './WhyUs.css';
 
 const benefits = [
   { stat: '+600', unit: 'hrs', label: 'Saved per week', desc: 'Automate repetitive tasks and free your best people for high-value work.' },

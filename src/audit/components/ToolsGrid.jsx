@@ -1,4 +1,3 @@
-import './ToolsGrid.css'
 
 const coreOutcomes = [
   'Turn AI into your daily work assistant',

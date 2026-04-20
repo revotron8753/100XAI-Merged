@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Check, Zap } from 'lucide-react';
-import './Process.css';
 
 const steps = [
   { num: '01', title: 'Discover & Strategise', duration: 'Day 1–2',
@@ -38,7 +37,7 @@ export default function Process() {
             From kickoff to live agents<br />
             in <span className="accent">7 days.</span>
           </h2>
-          <p className="section-subtitle" style={{ marginBottom: '48px' }}>
+          <p className="section-subtitle process-subtitle">
             No 6-month rollouts. No bloated onboarding. We move fast because
             your growth can't wait.
           </p>

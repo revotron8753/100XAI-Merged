@@ -1,8 +1,9 @@
-import ayushImg from '../../assets/Faces/Ayush.svg'
-import mohanImg from '../../assets/Faces/Mohan.jpeg'
-import santoshImg from '../../assets/Faces/Santosh.jpeg'
-import sarahImg from '../../assets/Faces/Sarah.png'
-import './Instructors.css'
+import Image from 'next/image';
+
+const ayushImg = '/assets/Faces/Ayush.svg';
+const mohanImg = '/assets/Faces/Mohan.jpeg';
+const santoshImg = '/assets/Faces/Santosh.jpeg';
+const sarahImg = '/assets/Faces/Sarah.png';
 
 const experts = [
   {
@@ -42,7 +43,7 @@ export default function Instructors() {
         <div className="instructors-grid">
           {experts.map(e => (
             <div key={e.name} className="instructor-card">
-              <img src={e.img} alt={e.name} className="inst-avatar" />
+              <Image src={e.img} alt={e.name} width={72} height={72} className="inst-avatar" />
               <h3 className="inst-name">{e.name}</h3>
               <p className="inst-role">{e.role}</p>
               <p className="inst-bio">{e.bio}</p>

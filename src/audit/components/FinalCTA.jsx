@@ -1,7 +1,6 @@
-import './FinalCTA.css'
+import { CALENDLY_URL, TODAY } from '../constants'
 
 export default function FinalCTA() {
-  const today = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
 
   return (
     <section className="final-cta-section">
@@ -13,8 +12,8 @@ export default function FinalCTA() {
         <p className="final-sub final-sub2">
           The real question is — while everything is moving forward, why should your business stay stuck doing things manually? AI is no longer optional. It's the shift that separates growing businesses from those getting left behind.
         </p>
-        <a href="https://calendly.com/hello-100xai/audit?month=2026-04" target="_blank" rel="noopener noreferrer" className="btn-primary final-btn">Join Now — $29 (90% OFF)</a>
-        <p className="final-deadline">Deadline: {today}</p>
+        <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn-primary final-btn">Join Now — $29 (90% OFF)</a>
+        <p className="final-deadline">Deadline: {TODAY}</p>
       </div>
     </section>
   )

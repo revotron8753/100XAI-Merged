@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
-import abhinav from '../assets/Faces/Abhinav.jpeg';
-import abhishek from '../assets/Faces/Abhishek.jpg';
-import kanchan from '../assets/Faces/Kanchan.jpeg';
-import './Testimonials.css';
+import Image from 'next/image';
+const abhinav = '/assets/Faces/Abhinav.jpeg';
+const abhishek = '/assets/Faces/Abhishek.jpg';
+const kanchan = '/assets/Faces/Kanchan.jpeg';
 
 const items = [
   {
@@ -70,7 +70,7 @@ export default function Testimonials() {
               </div>
               <blockquote className="test-text">"{t.quote}"</blockquote>
               <figcaption className="test-foot">
-                <img src={t.img} alt={t.name} className="test-avatar" />
+                <Image src={t.img} alt={t.name} width={42} height={42} className="test-avatar" />
                 <div className="test-info">
                   <div className="test-name">{t.name}</div>
                   <div className="test-role">{t.role}</div>

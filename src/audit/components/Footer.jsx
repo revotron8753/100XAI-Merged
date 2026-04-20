@@ -1,5 +1,4 @@
-import logo from '../../assets/Purple and Green Modern Gadget Repair Business Card.svg'
-import './Footer.css'
+const logo = '/assets/Purple and Green Modern Gadget Repair Business Card.svg';
 
 export default function Footer() {
   return (

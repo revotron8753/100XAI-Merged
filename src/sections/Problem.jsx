@@ -3,7 +3,6 @@ import {
   Building2, Briefcase, ShoppingBag, BarChart3,
   Users, Globe, Rocket, Award
 } from 'lucide-react';
-import './Problem.css';
 
 const solutions = [
   { icon: Building2, label: 'SaaS Startups' },

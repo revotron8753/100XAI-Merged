@@ -1,7 +1,5 @@
-import { Linkedin, Mail, ArrowUpRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Linkedin, Mail } from 'lucide-react';
 import Logo from '../components/Logo';
-import './Footer.css';
 
 export default function Footer() {
   const cols = [

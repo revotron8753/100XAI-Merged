@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import logo from '../../assets/Purple and Green Modern Gadget Repair Business Card.svg'
-import './Navbar.css'
+import Link from 'next/link'
+import { CALENDLY_URL } from '../constants'
+
+const logo = '/assets/Purple and Green Modern Gadget Repair Business Card.svg';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [leaving, setLeaving] = useState(false)
   const [expanded, setExpanded] = useState(false)
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
+    setIsMobile(window.innerWidth <= 768)
     const onResize = () => setIsMobile(window.innerWidth <= 768)
     window.addEventListener('resize', onResize)
     return () => window.removeEventListener('resize', onResize)
@@ -57,10 +59,10 @@ export default function Navbar() {
 
       {!scrolled && !leaving && (
         <div className="container nav-inner">
-          <Link to="/" aria-label="100XAI home">
+          <Link href="/" aria-label="100XAI home">
             <img src={logo} alt="100XAI" className="nav-logo" />
           </Link>
-          <a href="https://calendly.com/hello-100xai/audit?month=2026-04" target="_blank" rel="noopener noreferrer" className="btn-primary nav-btn">Book Automation Audit</a>
+          <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn-primary nav-btn">Book Automation Audit</a>
         </div>
       )}
 
@@ -78,7 +80,7 @@ export default function Navbar() {
             />
           </button>
           <a
-            href="https://calendly.com/hello-100xai/audit?month=2026-04"
+            href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
             className={`btn-primary nav-btn ${mobileCollapsed && !expanded ? 'nav-btn--hidden' : ''}`}

@@ -1,4 +1,3 @@
-import './FeaturedIn.css'
 
 export default function FeaturedIn() {
   return (

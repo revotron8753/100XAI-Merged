@@ -1,7 +1,6 @@
-import './WorkshopCTA.css'
+import { CALENDLY_URL, TODAY } from '../constants'
 
 export default function WorkshopCTA() {
-  const today = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
 
   return (
     <section id="audit" className="workshop-section">
@@ -15,7 +14,7 @@ export default function WorkshopCTA() {
             <span className="w-current">$29</span>
             <span className="w-badge">Save 90%</span>
           </div>
-          <p className="workshop-deadline">Deadline: {today}</p>
+          <p className="workshop-deadline">Deadline: {TODAY}</p>
 
           <h3 className="workshop-perks-title">What You Get:</h3>
           <ul className="workshop-perks">
@@ -25,7 +24,7 @@ export default function WorkshopCTA() {
             <li>Action plan to scale your business using AI without complexity</li>
           </ul>
 
-          <a href="https://calendly.com/hello-100xai/audit?month=2026-04" target="_blank" rel="noopener noreferrer" className="btn-primary workshop-btn">Book Automation Audit</a>
+          <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn-primary workshop-btn">Book Automation Audit</a>
           <p className="workshop-note">Secure payment · Personalized to your business · Start today</p>
         </div>
       </div>

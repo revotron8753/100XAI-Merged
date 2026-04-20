@@ -1,4 +1,3 @@
-import './WhyUs.css'
 
 const points = [
   { text: 'Trusted by growing businesses' },

@@ -1,5 +1,4 @@
-import logoSvg from '../assets/Purple and Green Modern Gadget Repair Business Card.svg';
-import './Logo.css';
+const logoSvg = '/assets/Purple and Green Modern Gadget Repair Business Card.svg';
 
 export default function Logo({ variant = 'dark', size = 'md' }) {
   return (

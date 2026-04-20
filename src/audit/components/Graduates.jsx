@@ -1,16 +1,15 @@
-import aayushmaan from '../../assets/Faces/Aayushmaan.jpeg'
-import abhinav from '../../assets/Faces/Abhinav.jpeg'
-import arun from '../../assets/Faces/Arun.jpeg'
-import daurati from '../../assets/Faces/Daurati.jpg'
-import kanchan from '../../assets/Faces/Kanchan.jpeg'
-import aarush from '../../assets/Faces/aarush.jpeg'
-import venu from '../../assets/Faces/venu.jpeg'
-import mohan from '../../assets/Faces/Mohan.jpeg'
-import sarah from '../../assets/Faces/Sarah.png'
-import santosh from '../../assets/Faces/Santosh.jpeg'
-import './Graduates.css'
-
-const avatars = [aayushmaan, abhinav, arun, daurati, kanchan, aarush, venu, mohan, sarah, santosh]
+const avatars = [
+  '/assets/Faces/Aayushmaan.jpeg',
+  '/assets/Faces/Abhinav.jpeg',
+  '/assets/Faces/Arun.jpeg',
+  '/assets/Faces/Daurati.jpg',
+  '/assets/Faces/Kanchan.jpeg',
+  '/assets/Faces/aarush.jpeg',
+  '/assets/Faces/venu.jpeg',
+  '/assets/Faces/Mohan.jpeg',
+  '/assets/Faces/Sarah.png',
+  '/assets/Faces/Santosh.jpeg',
+]
 
 export default function Graduates() {
   return (

@@ -1,4 +1,4 @@
-import './Bonuses.css'
+import { CALENDLY_URL } from '../constants'
 
 const benefits = [
   { title: 'Access powerful AI tools — free', desc: 'Get access to powerful AI tools without paying for expensive subscriptions.' },
@@ -25,7 +25,7 @@ export default function Bonuses() {
           ))}
         </div>
         <div className="bonuses-cta">
-          <a href="https://calendly.com/hello-100xai/audit?month=2026-04" target="_blank" rel="noopener noreferrer" className="btn-primary">Claim All Benefits — $29</a>
+          <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">Claim All Benefits — $29</a>
         </div>
       </div>
     </section>

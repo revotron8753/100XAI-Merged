@@ -1,4 +1,3 @@
-import './Curriculum.css'
 
 const modules = [
   { title: 'Understanding AI & Prompt Engineering', desc: 'Master the art of prompting for perfect outputs' },

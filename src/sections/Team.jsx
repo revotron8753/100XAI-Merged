@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import { Linkedin, Twitter } from 'lucide-react';
-import sarah from '../assets/Faces/Sarah.png';
-import mohan from '../assets/Faces/Mohan.jpeg';
-import ayush from '../assets/Faces/Ayush.svg';
-import santosh from '../assets/Faces/Santosh.jpeg';
-import './Team.css';
+import Image from 'next/image';
+const sarah = '/assets/Faces/Sarah.png';
+const mohan = '/assets/Faces/Mohan.jpeg';
+const ayush = '/assets/Faces/Ayush.svg';
+const santosh = '/assets/Faces/Santosh.jpeg';
 
 const team = [
   {
@@ -70,7 +70,7 @@ export default function Team() {
               className="team-card"
             >
               <div className="team-photo-wrap">
-                <img src={member.img} alt={member.name} className="team-photo" />
+                <Image src={member.img} alt={member.name} fill className="team-photo" />
                 <span className="team-tag-badge">{member.tag}</span>
               </div>
               <div className="team-info">

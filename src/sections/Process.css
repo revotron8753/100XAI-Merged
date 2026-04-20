@@ -10,6 +10,7 @@
 }
 
 .process-left { display: flex; flex-direction: column; }
+.process-subtitle { margin-bottom: 48px; }
 
 /* Steps */
 .process-steps {

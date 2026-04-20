@@ -51,9 +51,9 @@
 }
 
 .test-text {
-  font-size: 1.02rem;
-  color: var(--navy-900);
-  line-height: 1.65;
+  font-size: 1rem;
+  color: var(--navy);
+  line-height: 1.7;
   margin-bottom: 28px;
   flex-grow: 1;
   font-weight: 500;
@@ -103,15 +103,6 @@
   border: 1px solid rgba(255,65,54,0.15);
   border-radius: 100px;
   white-space: nowrap;
-}
-
-.test-text {
-  font-size: 1rem;
-  color: var(--navy);
-  line-height: 1.7;
-  margin-bottom: 28px;
-  flex-grow: 1;
-  font-weight: 500;
 }
 
 .test-quote-icon {

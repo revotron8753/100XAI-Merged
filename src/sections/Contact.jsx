@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, ShieldCheck, Clock, Mail, MessageSquare } from 'lucide-react';
-import './Contact.css';
 
 export default function Contact() {
   const [form, setForm] = useState({

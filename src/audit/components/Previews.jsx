@@ -1,19 +1,15 @@
-import kanchan from '../../assets/Faces/Kanchan.jpeg'
-import abhishek from '../../assets/Faces/Abhishek.jpg'
-import './Previews.css'
-
 const testimonials = [
   {
     quote: '100XAI completely changed how we operate — tasks that used to take hours now get done in minutes. The impact on productivity is unreal.',
     name: 'Kanchan Mehra',
     role: 'Founder - Vimla Art Forum Trust',
-    img: kanchan,
+    img: '/assets/Faces/Kanchan.jpeg',
   },
   {
     quote: "We've reduced dependency on hiring and still scaled faster. 100XAI helped us turn AI into a real business advantage.",
     name: 'Abhishek Sharma',
     role: 'ESG Consultant and SDG Mentor',
-    img: abhishek,
+    img: '/assets/Faces/Abhishek.jpg',
   },
 ]
 
