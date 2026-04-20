@@ -57,9 +57,10 @@ export default function Problem() {
           className="problem-right"
         >
           <p className="problem-right-text">
-            Our software adapts to every scenario, ensuring efficient and inclusive
-            workflows. 100XAI offers no limits, just boundless possibilities for
-            every kind of B2B growth team.
+            Whether you're a founder closing your first 100 customers or an
+            enterprise scaling a sales team, 100XAI plugs into your existing
+            stack and automates the growth work that eats up your week — outreach,
+            content, follow-ups, and more.
           </p>
 
           <div className="problem-grid">
