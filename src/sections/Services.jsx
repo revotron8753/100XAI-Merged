@@ -1,9 +1,28 @@
 import { motion } from 'framer-motion';
-import { Check, ArrowUpRight } from 'lucide-react';
-import { agents } from '../data/agents';
+import { Check, ArrowUpRight, MessageSquare, PenLine, Link2, Repeat, Megaphone, Send, Inbox, Mail } from 'lucide-react';
+import { agents as HARDCODED_AGENTS } from '../data/agents';
 import { scrollTo } from '../utils/scroll';
 
-export default function Services() {
+const ICON_MAP = {
+  lynco: MessageSquare,
+  bleo: PenLine,
+  bako: Link2,
+  coro: Repeat,
+  posto: Megaphone,
+  dimo: Send,
+  emeo: Inbox,
+  otto: Mail,
+};
+
+export default function Services({ agents: sanityAgents = [] }) {
+  const agents = sanityAgents.length > 0
+    ? sanityAgents.map(a => ({
+        ...a,
+        id: a.name.toLowerCase(),
+        desc: a.description,
+        icon: ICON_MAP[a.name.toLowerCase()] || MessageSquare,
+      }))
+    : HARDCODED_AGENTS;
   return (
     <section className="services" id="services">
       <div className="services-bg">

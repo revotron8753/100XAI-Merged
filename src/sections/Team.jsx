@@ -1,43 +1,33 @@
 import { motion } from 'framer-motion';
 import { Linkedin, Twitter } from 'lucide-react';
 import Image from 'next/image';
-const sarah = '/assets/Faces/Sarah.png';
-const mohan = '/assets/Faces/Mohan.jpeg';
-const ayush = '/assets/Faces/Ayush.svg';
-const santosh = '/assets/Faces/Santosh.jpeg';
+import { urlFor } from '../lib/sanity';
 
-const team = [
-  {
-    img: ayush,
-    name: 'Ayush Kapoor',
-    title: 'Founder',
-    bio: 'Business Automations Expert, Founder at 100XAI. Building 1-person businesses to reach $1M+ valuations.',
-    tag: 'Founder',
-  },
-  {
-    img: mohan,
-    name: 'Mohan Verma',
-    title: 'Co-Founder',
-    bio: 'Business Leader with 25+ Years of Experience. Ex-VP of Airtel, GE Capital.',
-    tag: 'Co-Founder',
-  },
-  {
-    img: sarah,
-    name: 'Sarah Rawat',
-    title: 'Director of Growth',
-    bio: 'Marketing Specialist. Leading Indian Women Entrepreneur in the fields of AI, Sustainability & Edtech.',
-    tag: 'Director',
-  },
-  {
-    img: santosh,
-    name: 'Santosh Srivastava',
-    title: 'Mentor and Advisor',
-    bio: 'Ex-Tata WireOn, Jewellery Business Leader, Mentor to startups with combined valuation of $350M+.',
-    tag: 'Advisor',
-  },
+const HARDCODED_TEAM = [
+  { img: '/assets/Faces/Ayush.svg', name: 'Ayush Kapoor', title: 'Founder', bio: 'Business Automations Expert, Founder at 100XAI. Building 1-person businesses to reach $1M+ valuations.', tag: 'Founder' },
+  { img: '/assets/Faces/Mohan.jpeg', name: 'Mohan Verma', title: 'Co-Founder', bio: 'Business Leader with 25+ Years of Experience. Ex-VP of Airtel, GE Capital.', tag: 'Co-Founder' },
+  { img: '/assets/Faces/Sarah.png', name: 'Sarah Rawat', title: 'Director of Growth', bio: 'Marketing Specialist. Leading Indian Women Entrepreneur in the fields of AI, Sustainability & Edtech.', tag: 'Director' },
+  { img: '/assets/Faces/Santosh.jpeg', name: 'Santosh Srivastava', title: 'Mentor and Advisor', bio: 'Ex-Tata WireOn, Jewellery Business Leader, Mentor to startups with combined valuation of $350M+.', tag: 'Advisor' },
 ];
 
-export default function Team() {
+const LOCAL_PHOTOS = {
+  'Ayush Kapoor': '/assets/Faces/Ayush.svg',
+  'Mohan Verma': '/assets/Faces/Mohan.jpeg',
+  'Sarah Rawat': '/assets/Faces/Sarah.png',
+  'Santosh Srivastava': '/assets/Faces/Santosh.jpeg',
+};
+
+export default function Team({ teamMembers = [] }) {
+  const team = teamMembers.length > 0
+    ? teamMembers.map(m => ({
+        img: m.photo ? urlFor(m.photo).width(300).url() : (LOCAL_PHOTOS[m.name] || '/assets/Faces/Ayush.svg'),
+        name: m.name,
+        title: m.title,
+        bio: m.bio,
+        tag: m.tag,
+        linkedinUrl: m.linkedinUrl,
+      }))
+    : HARDCODED_TEAM;
   return (
     <section className="team section" id="team">
       <div className="container">

@@ -16,6 +16,10 @@ import '../src/sections/WhyUs.css';
 import '../src/sections/Contact.css';
 import '../src/sections/Footer.css';
 
+// Blog
+import '../src/blog/blog-listing.css';
+import '../src/blog/blog-post.css';
+
 // Audit page
 import '../src/audit/audit-scope.css';
 import '../src/audit/components/AnnouncementBar.css';

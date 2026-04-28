@@ -1,38 +1,31 @@
 import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
 import Image from 'next/image';
-const abhinav = '/assets/Faces/Abhinav.jpeg';
-const abhishek = '/assets/Faces/Abhishek.jpg';
-const kanchan = '/assets/Faces/Kanchan.jpeg';
+import { urlFor } from '../lib/sanity';
 
-const items = [
-  {
-    quote: "100XAI transformed how we handle outreach entirely. The automation is so well-tuned to our voice that clients can't tell it isn't hand-written. Our pipeline has never looked better.",
-    name: 'Abhinav',
-    role: 'Growth Lead',
-    agent: 'Otto + Lynco',
-    rating: 5,
-    img: abhinav,
-  },
-  {
-    quote: "As an ESG consultant, every touchpoint matters. 100XAI helped us scale personalised outreach without compromising quality. The results spoke in the first two weeks.",
-    name: 'Abhishek Sharma',
-    role: 'ESG Consultant and SDG Mentor',
-    agent: 'Lynco + Bleo',
-    rating: 5,
-    img: abhishek,
-  },
-  {
-    quote: "Running an art trust means limited bandwidth for marketing. 100XAI handled our content and outreach so seamlessly — we saw 3x more enquiries without adding a single hire.",
-    name: 'Kanchan Mehra',
-    role: 'Founder, Vimla Art Forum Trust',
-    agent: 'Bleo + Coro',
-    rating: 5,
-    img: kanchan,
-  },
+const HARDCODED = [
+  { quote: "100XAI transformed how we handle outreach entirely. The automation is so well-tuned to our voice that clients can't tell it isn't hand-written. Our pipeline has never looked better.", name: 'Abhinav', role: 'Growth Lead', agent: 'Otto + Lynco', rating: 5, img: '/assets/Faces/Abhinav.jpeg' },
+  { quote: "As an ESG consultant, every touchpoint matters. 100XAI helped us scale personalised outreach without compromising quality. The results spoke in the first two weeks.", name: 'Abhishek Sharma', role: 'ESG Consultant and SDG Mentor', agent: 'Lynco + Bleo', rating: 5, img: '/assets/Faces/Abhishek.jpg' },
+  { quote: "Running an art trust means limited bandwidth for marketing. 100XAI handled our content and outreach so seamlessly — we saw 3x more enquiries without adding a single hire.", name: 'Kanchan Mehra', role: 'Founder, Vimla Art Forum Trust', agent: 'Bleo + Coro', rating: 5, img: '/assets/Faces/Kanchan.jpeg' },
 ];
 
-export default function Testimonials() {
+const LOCAL_PHOTOS = {
+  'Abhinav': '/assets/Faces/Abhinav.jpeg',
+  'Abhishek Sharma': '/assets/Faces/Abhishek.jpg',
+  'Kanchan Mehra': '/assets/Faces/Kanchan.jpeg',
+};
+
+export default function Testimonials({ testimonials = [] }) {
+  const items = testimonials.length > 0
+    ? testimonials.map(t => ({
+        quote: t.quote,
+        name: t.clientName,
+        role: t.clientRole,
+        agent: t.agentsCombined,
+        rating: t.rating || 5,
+        img: t.photo ? urlFor(t.photo).width(84).url() : (LOCAL_PHOTOS[t.clientName] || ''),
+      }))
+    : HARDCODED;
   return (
     <section className="testimonials section">
       <div className="container">

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus } from 'lucide-react';
 
-const faqs = [
+const HARDCODED_FAQS = [
   {
     q: 'How fast can we go live?',
     a: "Most clients are live within 7 days of kickoff. That includes discovery, agent training on your brand voice, CRM integrations, and domain warm-up for email agents. Complex deployments with multiple agents typically take 10–14 days.",
@@ -37,7 +37,10 @@ const faqs = [
   },
 ];
 
-export default function FAQ() {
+export default function FAQ({ faqItems = [] }) {
+  const faqs = faqItems.length > 0
+    ? faqItems.map(f => ({ q: f.question, a: f.answer }))
+    : HARDCODED_FAQS;
   const [open, setOpen] = useState(0);
 
   return (

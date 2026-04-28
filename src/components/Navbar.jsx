@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import Logo from './Logo';
 import { scrollTo } from '../utils/scroll';
 
@@ -66,6 +68,7 @@ export default function Navbar() {
             <a href="#process" onClick={(e) => { e.preventDefault(); scrollTo('process'); }}>How it works</a>
             <a href="#team" onClick={(e) => { e.preventDefault(); scrollTo('team'); }}>Team</a>
             <a href="#faq" onClick={(e) => { e.preventDefault(); scrollTo('faq'); }}>FAQ</a>
+            <Link href="/blog">Blog</Link>
           </nav>
           <a href="#contact" className="btn btn-primary navbar-cta" onClick={(e) => { e.preventDefault(); scrollTo('contact'); }}>
             Book Free Audit

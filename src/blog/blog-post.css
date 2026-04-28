@@ -1,0 +1,136 @@
+.blog-post {
+  background: var(--cream);
+  padding-bottom: 96px;
+  min-height: 100vh;
+}
+
+.blog-post__container {
+  max-width: 780px;
+}
+
+.blog-post__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+  margin: 40px 0 36px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.blog-post__back:hover { opacity: 1; }
+
+.blog-post__header {
+  margin-bottom: 32px;
+}
+
+.blog-post__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.blog-post__title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.blog-post__meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.875rem;
+  color: rgba(0, 31, 63, 0.55);
+}
+
+.blog-post__author { font-weight: 600; color: var(--navy); }
+
+.blog-post__cover {
+  position: relative;
+  width: 100%;
+  padding-top: 50%;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 36px;
+}
+
+.blog-post__cover-img { object-fit: cover; }
+
+.blog-post__excerpt {
+  font-size: 1.15rem;
+  color: rgba(0, 31, 63, 0.7);
+  line-height: 1.7;
+  border-left: 3px solid var(--red);
+  padding-left: 20px;
+  margin-bottom: 36px;
+  font-style: italic;
+}
+
+.blog-post__body {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(0, 31, 63, 0.85);
+}
+
+.blog-post__body h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 40px 0 16px;
+}
+
+.blog-post__body h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 32px 0 12px;
+}
+
+.blog-post__body p { margin-bottom: 20px; }
+
+.blog-post__body a {
+  color: var(--red);
+  text-decoration: underline;
+}
+
+.blog-post__body ul,
+.blog-post__body ol {
+  padding-left: 24px;
+  margin-bottom: 20px;
+}
+
+.blog-post__body li { margin-bottom: 8px; }
+
+.blog-post__body strong { color: var(--navy); font-weight: 600; }
+
+.blog-post__body blockquote {
+  border-left: 3px solid var(--red);
+  padding-left: 20px;
+  margin: 28px 0;
+  color: rgba(0, 31, 63, 0.65);
+  font-style: italic;
+}
+
+.blog-post__body code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875em;
+  background: rgba(0, 31, 63, 0.06);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.blog-post__content-img {
+  margin: 28px 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
