@@ -64,6 +64,7 @@ export default function Navbar() {
         <div className="container navbar-inner">
           <Logo variant="light" size="md" />
           <nav className="navbar-links">
+            <Link href="/">Home</Link>
             <a href="#services" onClick={(e) => { e.preventDefault(); scrollTo('services'); }}>Agents</a>
             <a href="#process" onClick={(e) => { e.preventDefault(); scrollTo('process'); }}>How it works</a>
             <a href="#team" onClick={(e) => { e.preventDefault(); scrollTo('team'); }}>Team</a>
