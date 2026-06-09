@@ -2,7 +2,6 @@ import Image from 'next/image';
 
 const ayushImg = '/assets/Faces/Ayush.svg';
 const mohanImg = '/assets/Faces/Mohan.jpeg';
-const santoshImg = '/assets/Faces/Santosh.jpeg';
 const sarahImg = '/assets/Faces/Sarah.png';
 
 const experts = [
@@ -17,12 +16,6 @@ const experts = [
     role: 'Marketing & Content',
     bio: 'Marketing Specialist. Leading Indian Women Entrepreneur in field of AI, Sustainability, Edtech.',
     img: sarahImg,
-  },
-  {
-    name: 'Santosh Srivastava',
-    role: 'Franchise & Operations',
-    bio: 'Ex-Tata WireOn, Jewellery Business Leader, Mentor to startups with combined valuation of $350M+.',
-    img: santoshImg,
   },
   {
     name: 'Ayush Kapoor',

@@ -23,7 +23,6 @@ const teamMembers = [
   { name: 'Ayush Kapoor', title: 'Founder', tag: 'Founder', bio: 'Business Automations Expert, Founder at 100XAI. Building 1-person businesses to reach $1M+ valuations.', linkedinUrl: 'https://www.linkedin.com/company/100xaico/', order: 1 },
   { name: 'Mohan Verma', title: 'Co-Founder', tag: 'Co-Founder', bio: 'Business Leader with 25+ Years of Experience. Ex-VP of Airtel, GE Capital.', linkedinUrl: 'https://www.linkedin.com/company/100xaico/', order: 2 },
   { name: 'Sarah Rawat', title: 'Director of Growth', tag: 'Director', bio: 'Marketing Specialist. Leading Indian Women Entrepreneur in the fields of AI, Sustainability & Edtech.', linkedinUrl: 'https://www.linkedin.com/company/100xaico/', order: 3 },
-  { name: 'Santosh Srivastava', title: 'Mentor and Advisor', tag: 'Advisor', bio: 'Ex-Tata WireOn, Jewellery Business Leader, Mentor to startups with combined valuation of $350M+.', linkedinUrl: 'https://www.linkedin.com/company/100xaico/', order: 4 },
 ]
 
 const testimonials = [

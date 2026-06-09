@@ -1,0 +1,7 @@
+{
+  "title": "Test Post",
+  "excerpt": "Just checking ingestion works.",
+  "author": "100XAI",
+  "tags": ["Test"],
+  "markdown": "## Hello\n\nThis is a **test** post with a [link](https://100x.ai).\n\n- point one\n- point two"
+}
