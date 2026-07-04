@@ -10,6 +10,16 @@
 
 import { createClient } from '@sanity/client';
 
+// Allow larger request bodies so base64 cover images (`coverImageBase64`) fit —
+// Next.js caps API bodies at 1 MB by default. NOTE: on Vercel, serverless
+// functions have a hard ~4.5 MB request-body limit that this cannot raise, so
+// in practice keep source images under ~3 MB (base64 inflates size ~33%).
+export const config = {
+  api: {
+    bodyParser: { sizeLimit: '10mb' },
+  },
+};
+
 // A dedicated client using the *write* token (separate from the read-only
 // SANITY_API_TOKEN used by the public pages).
 const writeClient = createClient({
@@ -136,16 +146,39 @@ function normalisePortableText(arr) {
   });
 }
 
+function coverRef(assetId) {
+  return {
+    _type: 'image',
+    asset: { _type: 'reference', _ref: assetId },
+  };
+}
+
+// Fetch a public image URL and upload its bytes to Sanity as a cover image.
 async function uploadCover(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`cover fetch failed: ${res.status}`);
   const buf = Buffer.from(await res.arrayBuffer());
   const filename = url.split('/').pop()?.split('?')[0] || 'cover.jpg';
   const asset = await writeClient.assets.upload('image', buf, { filename });
-  return {
-    _type: 'image',
-    asset: { _type: 'reference', _ref: asset._id },
-  };
+  return coverRef(asset._id);
+}
+
+// Decode a base64 image (raw base64 OR a `data:image/...;base64,...` URI) and
+// upload its bytes to Sanity directly — no public hosting step needed.
+async function uploadCoverFromBase64(input) {
+  let data = String(input).trim();
+  let ext = 'jpg';
+  const m = /^data:image\/([a-zA-Z0-9.+-]+);base64,(.*)$/s.exec(data);
+  if (m) {
+    ext = m[1].toLowerCase() === 'jpeg' ? 'jpg' : m[1].toLowerCase();
+    data = m[2];
+  }
+  // Some encoders wrap base64 in newlines/whitespace — strip it before decoding.
+  data = data.replace(/\s/g, '');
+  const buf = Buffer.from(data, 'base64');
+  if (!buf.length) throw new Error('coverImageBase64 decoded to empty data');
+  const asset = await writeClient.assets.upload('image', buf, { filename: `cover.${ext}` });
+  return coverRef(asset._id);
 }
 
 // ---------------------------------------------------------------------------
@@ -185,6 +218,7 @@ export default async function handler(req, res) {
     markdown,
     content,
     coverImageUrl,
+    coverImageBase64,
     status,
     overwrite,
   } = body;
@@ -224,9 +258,11 @@ export default async function handler(req, res) {
       });
     }
 
-    // Cover image (optional)
+    // Cover image (optional). Base64 bytes take precedence over a URL.
     let coverImage;
-    if (coverImageUrl) {
+    if (coverImageBase64) {
+      coverImage = await uploadCoverFromBase64(coverImageBase64);
+    } else if (coverImageUrl) {
       coverImage = await uploadCover(coverImageUrl);
     }
 

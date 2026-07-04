@@ -49,6 +49,7 @@ Content-Type: application/json
 | `markdown` | string | — | Body as Markdown → converted to Portable Text (`content`). |
 | `content` | Portable Text[] | — | Body as ready-made Portable Text. **Takes precedence** over `markdown`. |
 | `coverImageUrl` | string (URL) | — | Public image URL; fetched and uploaded to Sanity as the cover. |
+| `coverImageBase64` | string (base64 / data-URI) | — | Cover image sent inline as base64 (raw, or a `data:image/png;base64,...` URI). Uploaded to Sanity directly — no public URL needed. **Takes precedence** over `coverImageUrl`. On Vercel keep source images **under ~3 MB** (serverless body cap is ~4.5 MB and base64 adds ~33%). |
 | `status` | `"published"` \| `"draft"` | — | Defaults to **`published`**. Drafts are created but hidden from `/blog`. |
 | `overwrite` | boolean | — | If the slug already exists, replace it instead of returning 409. |
 
@@ -95,6 +96,25 @@ curl -X POST https://www.100xai.co/api/articles \
     "markdown": "## The problem\n\nManual prospecting is slow...\n\n- Lead research\n- Outreach\n\n## The fix\n\n**Agents** handle the busywork. See [our agents](https://100x.ai)."
   }'
 ```
+
+### Inline image (base64, no hosting needed)
+
+Use this when your automation generates the image locally and has no public URL
+to point at. Send raw base64 or a full data-URI:
+
+```json
+{
+  "title": "How AI Agents Cut B2B Sales Cycles in Half",
+  "excerpt": "A teardown of where automation actually moves the needle.",
+  "coverImageBase64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...",
+  "markdown": "## The problem\n\n..."
+}
+```
+
+> The server decodes the bytes and uploads them straight to Sanity, exactly like
+> a URL cover — you get the same permanent hosted copy + CDN. On Vercel keep the
+> source image under ~3 MB (the serverless request-body cap is ~4.5 MB and base64
+> adds ~33%). If both `coverImageBase64` and `coverImageUrl` are sent, base64 wins.
 
 ### Idempotent re-run / update
 
