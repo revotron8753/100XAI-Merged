@@ -16,7 +16,7 @@ export default function RefundPolicyPage() {
         <div className="container legal-inner">
           <div className="legal-tag">Legal</div>
           <h1 className="legal-title">Refund Policy</h1>
-          <p className="legal-updated">Last updated: 5 July 2026</p>
+          <p className="legal-updated">Last updated: 3 March 2026</p>
 
           <p className="legal-lead">
             100XAI operates on a <strong>prepaid engagement model</strong>. When you
