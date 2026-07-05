@@ -15,6 +15,19 @@ const ICON_MAP = {
   otto: Mail,
 };
 
+// Product images keyed by the agent's Sanity name (the CMS docs have no image
+// field yet). Agents without an entry here fall back to the icon panel.
+const IMAGE_MAP = {
+  lynco: '/assets/products/linkedin-automation.png',
+  bleo: '/assets/products/seo-blogs.png',
+  bako: '/assets/products/backlinks.png',
+  coro: '/assets/products/content-repurposing.png',
+  posto: '/assets/products/social-posting.png',
+  dimo: '/assets/products/linkedin-dms.png',
+  emeo: '/assets/products/email-replies.png',
+  otto: '/assets/products/cold-email.png',
+};
+
 function OfferCard({ agent, index, travel }) {
   // Even cards arrive from the left, odd from the right.
   const side = index % 2 === 0 ? 'left' : 'right';
@@ -94,7 +107,7 @@ export default function Services({ agents: sanityAgents = [] }) {
         title: a.title || a.role || a.name,
         tagline: a.tagline || a.description,
         features: a.features || [],
-        image: a.image || null,
+        image: a.image || IMAGE_MAP[a.name?.toLowerCase()] || null,
         icon: ICON_MAP[a.name?.toLowerCase()] || MessageSquare,
       }))
     : HARDCODED_AGENTS;
