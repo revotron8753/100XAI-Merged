@@ -20,6 +20,9 @@ import '../src/sections/Footer.css';
 import '../src/blog/blog-listing.css';
 import '../src/blog/blog-post.css';
 
+// Legal / policy pages
+import '../src/legal/legal.css';
+
 // Audit page
 import '../src/audit/audit-scope.css';
 import '../src/audit/components/AnnouncementBar.css';

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Linkedin, Mail } from 'lucide-react';
 import Logo from '../components/Logo';
 
@@ -81,6 +82,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} 100XAI. All rights reserved.</p>
           <div className="footer-legal">
+            <Link href="/refund-policy">Refund Policy</Link>
             <a href="#">Privacy</a>
             <a href="#">Terms</a>
             <a href="#">Cookies</a>
