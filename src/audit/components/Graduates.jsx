@@ -7,7 +7,6 @@ const avatars = [
   '/assets/Faces/aarush.jpeg',
   '/assets/Faces/venu.jpeg',
   '/assets/Faces/Mohan.jpeg',
-  '/assets/Faces/Sarah.png',
 ]
 
 export default function Graduates() {

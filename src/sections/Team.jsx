@@ -6,13 +6,11 @@ import { urlFor } from '../lib/sanity';
 const HARDCODED_TEAM = [
   { img: '/assets/Faces/Ayush.svg', name: 'Ayush Kapoor', title: 'Founder', bio: 'Business Automations Expert, Founder at 100XAI. Building 1-person businesses to reach $1M+ valuations.', tag: 'Founder' },
   { img: '/assets/Faces/Mohan.jpeg', name: 'Mohan Verma', title: 'Co-Founder', bio: 'Business Leader with 25+ Years of Experience. Ex-VP of Airtel, GE Capital.', tag: 'Co-Founder' },
-  { img: '/assets/Faces/Sarah.png', name: 'Sarah Rawat', title: 'Director of Growth', bio: 'Marketing Specialist. Leading Indian Women Entrepreneur in the fields of AI, Sustainability & Edtech.', tag: 'Director' },
 ];
 
 const LOCAL_PHOTOS = {
   'Ayush Kapoor': '/assets/Faces/Ayush.svg',
   'Mohan Verma': '/assets/Faces/Mohan.jpeg',
-  'Sarah Rawat': '/assets/Faces/Sarah.png',
 };
 
 export default function Team({ teamMembers = [] }) {

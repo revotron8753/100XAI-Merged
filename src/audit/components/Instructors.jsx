@@ -2,7 +2,6 @@ import Image from 'next/image';
 
 const ayushImg = '/assets/Faces/Ayush.svg';
 const mohanImg = '/assets/Faces/Mohan.jpeg';
-const sarahImg = '/assets/Faces/Sarah.png';
 
 const experts = [
   {
@@ -10,12 +9,6 @@ const experts = [
     role: 'Business Growth',
     bio: 'Business Leader with 25+ Years of Experience. Ex-VP of Airtel, GE Capital.',
     img: mohanImg,
-  },
-  {
-    name: 'Sarah Rawat',
-    role: 'Marketing & Content',
-    bio: 'Marketing Specialist. Leading Indian Women Entrepreneur in field of AI, Sustainability, Edtech.',
-    img: sarahImg,
   },
   {
     name: 'Ayush Kapoor',
